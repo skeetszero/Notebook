@@ -3967,3 +3967,936 @@ Completed 200 OK in 238ms (Views: 186.1ms | ActiveRecord: 3.0ms)
   [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" ORDER BY "contacts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" ORDER BY "addresses"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mContact Load (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 6], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2017-10-08 15:28:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (61.8ms)
+Completed 200 OK in 3955ms (Views: 3846.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for 127.0.0.1 at 2017-10-08 15:28:38 -0300
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered kinds/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 209ms (Views: 154.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds/new" for 127.0.0.1 at 2017-10-08 15:28:48 -0300
+Processing by KindsController#new as HTML
+  Rendering kinds/new.html.erb within layouts/application
+  Rendered kinds/_form.html.erb (2920.9ms)
+  Rendered kinds/new.html.erb within layouts/application (2951.4ms)
+Completed 200 OK in 3366ms (Views: 3337.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/kinds" for 127.0.0.1 at 2017-10-08 15:29:05 -0300
+Processing by KindsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f2Kc8MDxSRP0d5zoaCDa3+8aR6vqj5EL064/mOn/9vHM9SeuOf2ORkRRzXULJl+iakXLrCvmcoZCf+cCtLJSrw==", "kind"=>{"description"=>"Teste"}, "commit"=>"Create Kind"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (20.9ms)[0m  [1m[32mINSERT INTO "kinds" ("description", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["description", "Teste"], ["created_at", "2017-10-08 18:29:05.801124"], ["updated_at", "2017-10-08 18:29:05.801124"]]
+  [1m[35m (89.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/kinds/4
+Completed 302 Found in 119ms (ActiveRecord: 110.1ms)
+
+
+Started GET "/kinds/4" for 127.0.0.1 at 2017-10-08 15:29:05 -0300
+Processing by KindsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering kinds/show.html.erb within layouts/application
+  Rendered kinds/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 284ms (Views: 215.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for 127.0.0.1 at 2017-10-08 15:29:07 -0300
+Processing by KindsController#index as HTML
+  Rendering kinds/index.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered kinds/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 170ms (Views: 146.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/kinds" for 127.0.0.1 at 2017-10-08 16:18:42 -0300
+Started GET "/" for 127.0.0.1 at 2017-10-08 16:19:19 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 828ms (Views: 790.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 16:19:40 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (1.0ms)
+  Rendered contacts/index.html.erb within layouts/application (107.1ms)
+Completed 200 OK in 326ms (Views: 269.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:19:42 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (1278.9ms)
+  Rendered contacts/new.html.erb within layouts/application (1296.4ms)
+Completed 200 OK in 1491ms (Views: 1460.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:24:32 -0300
+Processing by ContactsController#new as HTML
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.5ms)
+
+
+  
+NoMethodError (undefined method `build' for nil:NilClass):
+  
+app/controllers/contacts_controller.rb:18:in `new'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (5.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (2118.7ms)
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:25:03 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (17.0ms)
+  Rendered contacts/new.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 274ms (Views: 214.0ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:26:31 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (6.0ms)
+  Rendered contacts/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 210ms (Views: 186.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:27:12 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (7.2ms)
+  Rendered contacts/new.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 225ms (Views: 202.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:28:30 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MVGd2GWWcLm1hRCPaA7dlajnbFH/fdsCOxOpdTMc1qZvJckbOdWVXuc/892hl4KGcyXYyDIuqX7a+Yn1ddVLqw==", "contact"=>{"name"=>"sdfsd", "email"=>"fsdfd", "kind_id"=>"1", "address_attributes"=>{"street"=>"fsdfsd", "city"=>"fsfs", "state"=>"fsdf"}, "rmk"=>"sfs"}, "commit"=>"Enviar"}
+Unpermitted parameter: address_attributes
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "kind_id", "rmk", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sdfsd"], ["email", "fsdfd"], ["kind_id", 1], ["rmk", "sfs"], ["created_at", "2017-10-08 19:28:30.227932"], ["updated_at", "2017-10-08 19:28:30.227932"]]
+  [1m[35m (97.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/11
+Completed 302 Found in 120ms (ActiveRecord: 100.2ms)
+
+
+Started GET "/contacts/11" for 127.0.0.1 at 2017-10-08 16:28:30 -0300
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mContact Load (0.5ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 250ms (Views: 213.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 16:31:25 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (0.5ms)
+  Rendered contacts/index.html.erb within layouts/application (95.6ms)
+Completed 200 OK in 262ms (Views: 233.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:31:28 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.5ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (8.5ms)
+  Rendered contacts/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 244ms (Views: 204.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:31:59 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVpNGfeHhSpQnGDCIBl2DujF+BI0VKAtSgrhnS5b8gNU6pk0e2gzhboW5salxc1oLsryShdzbNZH0A9GhO+nvA==", "contact"=>{"name"=>"Luciano", "email"=>"luciano@gmail.com", "kind_id"=>"2", "address_attributes"=>{"street"=>"Lajinha", "city"=>"Teofilo otoni", "state"=>"Minas Gerais"}, "rmk"=>"asdasd"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (20.0ms)
+  Rendered contacts/new.html.erb within layouts/application (40.0ms)
+Completed 500 Internal Server Error in 110ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31:   <div class="field">
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_94385604'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_94385604'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_94460688'
+app/controllers/contacts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:32:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1389.9ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:33:03 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVpNGfeHhSpQnGDCIBl2DujF+BI0VKAtSgrhnS5b8gNU6pk0e2gzhboW5salxc1oLsryShdzbNZH0A9GhO+nvA==", "contact"=>{"name"=>"Luciano", "email"=>"luciano@gmail.com", "kind_id"=>"2", "address_attributes"=>{"street"=>"Lajinha", "city"=>"Teofilo otoni", "state"=>"Minas Gerais"}, "rmk"=>"asdasd"}, "commit"=>"Enviar"}
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `address_attributes' for #<ContactsController:0xb7c0c30>
+Did you mean?  address_path):
+  
+app/controllers/contacts_controller.rb:75:in `contact_params'
+app/controllers/contacts_controller.rb:30:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1450.0ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:33:58 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVpNGfeHhSpQnGDCIBl2DujF+BI0VKAtSgrhnS5b8gNU6pk0e2gzhboW5salxc1oLsryShdzbNZH0A9GhO+nvA==", "contact"=>{"name"=>"Luciano", "email"=>"luciano@gmail.com", "kind_id"=>"2", "address_attributes"=>{"street"=>"Lajinha", "city"=>"Teofilo otoni", "state"=>"Minas Gerais"}, "rmk"=>"asdasd"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (22.0ms)
+  Rendered contacts/new.html.erb within layouts/application (44.5ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31:   <div class="field">
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_85317036'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_85317036'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_85333776'
+app/controllers/contacts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:32:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1429.2ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:40:52 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVpNGfeHhSpQnGDCIBl2DujF+BI0VKAtSgrhnS5b8gNU6pk0e2gzhboW5salxc1oLsryShdzbNZH0A9GhO+nvA==", "contact"=>{"name"=>"Luciano", "email"=>"luciano@gmail.com", "kind_id"=>"2", "address_attributes"=>{"street"=>"Lajinha", "city"=>"Teofilo otoni", "state"=>"Minas Gerais"}, "rmk"=>"asdasd"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (22.0ms)
+  Rendered contacts/new.html.erb within layouts/application (40.0ms)
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_103371072'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_103371072'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_98357640'
+app/controllers/contacts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:32:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1437.1ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:42:42 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVpNGfeHhSpQnGDCIBl2DujF+BI0VKAtSgrhnS5b8gNU6pk0e2gzhboW5salxc1oLsryShdzbNZH0A9GhO+nvA==", "contact"=>{"name"=>"Luciano", "email"=>"luciano@gmail.com", "kind_id"=>"2", "address_attributes"=>{"street"=>"Lajinha", "city"=>"Teofilo otoni", "state"=>"Minas Gerais"}, "rmk"=>"asdasd"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (21.0ms)
+  Rendered contacts/new.html.erb within layouts/application (41.0ms)
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_90774192'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_90774192'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_102185676'
+app/controllers/contacts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:32:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (2116.9ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:45:39 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YVpNGfeHhSpQnGDCIBl2DujF+BI0VKAtSgrhnS5b8gNU6pk0e2gzhboW5salxc1oLsryShdzbNZH0A9GhO+nvA==", "contact"=>{"name"=>"Luciano", "email"=>"luciano@gmail.com", "kind_id"=>"2", "address_attributes"=>{"street"=>"Lajinha", "city"=>"Teofilo otoni", "state"=>"Minas Gerais"}, "rmk"=>"asdasd"}, "commit"=>"Enviar"}
+Unpermitted parameter: address_attributes
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (15.6ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "kind_id", "rmk", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Luciano"], ["email", "luciano@gmail.com"], ["kind_id", 2], ["rmk", "asdasd"], ["created_at", "2017-10-08 19:45:39.567640"], ["updated_at", "2017-10-08 19:45:39.567640"]]
+  [1m[35m (102.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/12
+Completed 302 Found in 153ms (ActiveRecord: 121.1ms)
+
+
+Started GET "/contacts/12" for 127.0.0.1 at 2017-10-08 16:45:39 -0300
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mContact Load (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/show.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 220ms (Views: 195.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/12" for 127.0.0.1 at 2017-10-08 16:46:30 -0300
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mContact Load (0.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/show.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 238ms (Views: 171.2ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 16:46:32 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (0.0ms)
+  Rendered contacts/index.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 186ms (Views: 176.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/12/edit" for 127.0.0.1 at 2017-10-08 16:46:37 -0300
+Processing by ContactsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering contacts/edit.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  [1m[36mAddress Load (0.0ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."contact_id" = ? LIMIT ?[0m  [["contact_id", 12], ["LIMIT", 1]]
+  Rendered contacts/_form.html.erb (54.3ms)
+  Rendered contacts/edit.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 209ms (Views: 197.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 16:46:44 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (0.0ms)
+  Rendered contacts/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 191ms (Views: 173.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:46:47 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (0.0ms)
+  Rendered contacts/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 181ms (Views: 156.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:46:53 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NUl19EqHaXmLeh4QpH8nlDBj9hDatJOCztZL5iN4kWkA+aHZxmjf1mHwmBQho5zy9mz8SPmTX3nDDKU9iczE1g==", "contact"=>{"name"=>"sdfsdfs", "email"=>"dfsdfs", "kind_id"=>"1", "address_attributes"=>{"street"=>"dfsdfsd", "city"=>"fsdfsdf", "state"=>"sdfsdf"}, "rmk"=>"sdfsfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (21.0ms)
+  Rendered contacts/new.html.erb within layouts/application (39.0ms)
+Completed 500 Internal Server Error in 133ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_88348440'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_88348440'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_88546524'
+app/controllers/contacts_controller.rb:37:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:32:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1632.1ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:47:24 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NUl19EqHaXmLeh4QpH8nlDBj9hDatJOCztZL5iN4kWkA+aHZxmjf1mHwmBQho5zy9mz8SPmTX3nDDKU9iczE1g==", "contact"=>{"name"=>"sdfsdfs", "email"=>"dfsdfs", "kind_id"=>"1", "address_attributes"=>{"street"=>"dfsdfsd", "city"=>"fsdfsdf", "state"=>"sdfsdf"}, "rmk"=>"sdfsfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (25.0ms)
+  Rendered contacts/new.html.erb within layouts/application (45.0ms)
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_88560024'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_88560024'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_90626160'
+app/controllers/contacts_controller.rb:38:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:33:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.5ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1920.3ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:49:56 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xiGNkgE13rFsCWQdTzCI/0OTHWjBu1pea4HefU63JT+YVdlRXXY7Vj6zh0+GqdfsmFGp8QzoKCKKa/79CH64Mg==", "contact"=>{"name"=>"sdfsdfs", "email"=>"dfsdfs", "kind_id"=>"2", "address_attributes"=>{"street"=>"dfsdfsd", "city"=>"fsdfsdf", "state"=>"sdfsdf"}, "rmk"=>"sdfsfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (21.0ms)
+  Rendered contacts/new.html.erb within layouts/application (39.0ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_99182820'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_99182820'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_96720276'
+app/controllers/contacts_controller.rb:38:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:33:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1743.2ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:55:29 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xiGNkgE13rFsCWQdTzCI/0OTHWjBu1pea4HefU63JT+YVdlRXXY7Vj6zh0+GqdfsmFGp8QzoKCKKa/79CH64Mg==", "contact"=>{"name"=>"sdfsdfs", "email"=>"dfsdfs", "kind_id"=>"2", "address_attributes"=>{"street"=>"dfsdfsd", "city"=>"fsdfsdf", "state"=>"sdfsdf"}, "rmk"=>"sdfsfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (10.0ms)
+  Rendered contacts/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 241ms (Views: 191.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 16:57:24 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (1.0ms)
+  Rendered contacts/index.html.erb within layouts/application (65.8ms)
+Completed 200 OK in 234ms (Views: 202.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 16:57:27 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (6.0ms)
+  Rendered contacts/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 196ms (Views: 170.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 16:57:32 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y1bV00QXXTo/Ga9teVfZKQM5Jo7JX5y57e4ju3YHE35W5gH+yPjrldWTKWn8i2JPxTYs1up4UELgNM1g3LNGwQ==", "contact"=>{"name"=>"sdfsdf", "email"=>"sdfsdf", "kind_id"=>"1", "address_attributes"=>{"street"=>"sdfs", "city"=>"dfsdfs", "state"=>"dfsd"}, "rmk"=>"fsdfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (21.0ms)
+  Rendered contacts/new.html.erb within layouts/application (39.0ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_100303428'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_100303428'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_97437192'
+app/controllers/contacts_controller.rb:41:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:36:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1612.1ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 17:01:21 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y1bV00QXXTo/Ga9teVfZKQM5Jo7JX5y57e4ju3YHE35W5gH+yPjrldWTKWn8i2JPxTYs1up4UELgNM1g3LNGwQ==", "contact"=>{"name"=>"sdfsdf", "email"=>"sdfsdf", "kind_id"=>"1", "address_attributes"=>{"street"=>"sdfs", "city"=>"dfsdfs", "state"=>"dfsd"}, "rmk"=>"fsdfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (9.0ms)
+  Rendered contacts/new.html.erb within layouts/application (29.0ms)
+Completed 500 Internal Server Error in 211ms (Views: 156.9ms | ActiveRecord: 2.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/contacts_controller.rb:43:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:36:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1416.9ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 17:01:43 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y1bV00QXXTo/Ga9teVfZKQM5Jo7JX5y57e4ju3YHE35W5gH+yPjrldWTKWn8i2JPxTYs1up4UELgNM1g3LNGwQ==", "contact"=>{"name"=>"sdfsdf", "email"=>"sdfsdf", "kind_id"=>"1", "address_attributes"=>{"street"=>"sdfs", "city"=>"dfsdfs", "state"=>"dfsd"}, "rmk"=>"fsdfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (10.0ms)
+  Rendered contacts/new.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 261ms (Views: 203.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 17:01:48 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (1.0ms)
+  Rendered contacts/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 201ms (Views: 181.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 17:01:50 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (6.0ms)
+  Rendered contacts/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 173ms (Views: 151.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 17:01:55 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7cxijZ4GyWI7o2lKdPizbsmNdpoQ5CsAUiBldpjIwDHYfLagEul/zdEp707xJAgID4J8wjPD5/tf+outMnyVjg==", "contact"=>{"name"=>"asdasda", "email"=>"sdasda", "kind_id"=>"1", "address_attributes"=>{"street"=>"sdasd", "city"=>"asdas", "state"=>"dasda"}, "rmk"=>"das"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (9.0ms)
+  Rendered contacts/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 207ms (Views: 194.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 17:02:03 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (0.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (1.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (0.0ms)
+  Rendered contacts/index.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 202ms (Views: 181.5ms | ActiveRecord: 3.0ms)
+
+
+Started DELETE "/contacts/11" for 127.0.0.1 at 2017-10-08 17:02:11 -0300
+Processing by ContactsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TyKpBOI7DHUbP7cfw4h9wrce2Sbu7o1DTMqxs8TTcGsRVv3HvnjpkkmFVE0KESLRbNxtvyO9/z+tIJEzghrtZg==", "id"=>"11"}
+  [1m[36mContact Load (3.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (11.6ms)[0m  [1m[31mDELETE FROM "contacts" WHERE "contacts"."id" = ?[0m  [["id", 11]]
+  [1m[35m (86.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/contacts
+Completed 302 Found in 113ms (ActiveRecord: 100.7ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 17:02:11 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (1.0ms)
+  Rendered contacts/index.html.erb within layouts/application (148.1ms)
+Completed 200 OK in 403ms (Views: 374.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 17:02:14 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (9.0ms)
+  Rendered contacts/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 191ms (Views: 169.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 17:02:23 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YdC95D/nbw34/mced6QHKPIYAObzL+xNUgnCgUtQFfZUYGnJswjZohJ04RryeLxONBcKvtAIILZf0yxa4eRASQ==", "contact"=>{"name"=>"sdfsdgfjghkjhkhjjk", "email"=>"fhkf", "kind_id"=>"4", "address_attributes"=>{"street"=>"jhsfhfdh", "city"=>"dfhfdghdf", "state"=>"ghdfghdfgh"}, "rmk"=>"fddhfghdfgh"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (7.0ms)
+  Rendered contacts/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 217ms (Views: 207.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 17:05:04 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (1.0ms)
+  Rendered contacts/index.html.erb within layouts/application (82.1ms)
+Completed 200 OK in 267ms (Views: 240.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/contacts/new" for 127.0.0.1 at 2017-10-08 17:05:08 -0300
+Processing by ContactsController#new as HTML
+  Rendering contacts/new.html.erb within layouts/application
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT "kinds".* FROM "kinds"[0m
+  Rendered contacts/_form.html.erb (8.0ms)
+  Rendered contacts/new.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 233ms (Views: 197.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 17:05:19 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c8hTzgLXjBzZxzSjUdLCxHs1Fg/9mgvnPk7VbkSXQSFGeIfjjjg6szNNsqfUDnmivTocV969xxwzlDu17iMUng==", "contact"=>{"name"=>"sdfsdfs", "email"=>"dfsdfsd", "kind_id"=>"1", "address_attributes"=>{"street"=>"fsdf", "city"=>"fsdfsdf", "state"=>"fsdfsd"}, "rmk"=>"fsdfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (21.0ms)
+  Rendered contacts/new.html.erb within layouts/application (39.0ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_103435440'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_103435440'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_89961972'
+app/controllers/contacts_controller.rb:42:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:36:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1656.1ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 17:08:00 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c8hTzgLXjBzZxzSjUdLCxHs1Fg/9mgvnPk7VbkSXQSFGeIfjjjg6szNNsqfUDnmivTocV969xxwzlDu17iMUng==", "contact"=>{"name"=>"sdfsdfs", "email"=>"dfsdfsd", "kind_id"=>"1", "address_attributes"=>{"street"=>"fsdf", "city"=>"fsdfsdf", "state"=>"fsdfsd"}, "rmk"=>"fsdfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering contacts/new.html.erb within layouts/application
+  Rendered contacts/_form.html.erb (23.0ms)
+  Rendered contacts/new.html.erb within layouts/application (41.0ms)
+Completed 500 Internal Server Error in 157ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass
+Did you mean?  tap):
+    25: 
+    26:   <div class="field">
+    27:     <%= f.label :kind_id %>
+    28:     <%= collection_select(:contact, :kind_id, @kind_options_for_select, :id, :description)  %>
+    29:   </div>
+    30: 
+    31: 
+  
+app/views/contacts/_form.html.erb:28:in `block in _app_views_contacts__form_html_erb__501410754_101124480'
+app/views/contacts/_form.html.erb:1:in `_app_views_contacts__form_html_erb__501410754_101124480'
+app/views/contacts/new.html.erb:2:in `_app_views_contacts_new_html_erb___296192677_100948896'
+app/controllers/contacts_controller.rb:42:in `block (2 levels) in create'
+app/controllers/contacts_controller.rb:36:in `create'
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (1382.9ms)
+Started POST "/contacts" for 127.0.0.1 at 2017-10-08 17:08:31 -0300
+Processing by ContactsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c8hTzgLXjBzZxzSjUdLCxHs1Fg/9mgvnPk7VbkSXQSFGeIfjjjg6szNNsqfUDnmivTocV969xxwzlDu17iMUng==", "contact"=>{"name"=>"sdfsdfs", "email"=>"dfsdfsd", "kind_id"=>"1", "address_attributes"=>{"street"=>"fsdf", "city"=>"fsdfsdf", "state"=>"fsdfsd"}, "rmk"=>"fsdfs"}, "commit"=>"Enviar"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "contacts" ("name", "email", "kind_id", "rmk", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "sdfsdfs"], ["email", "dfsdfsd"], ["kind_id", 1], ["rmk", "fsdfs"], ["created_at", "2017-10-08 20:08:31.791543"], ["updated_at", "2017-10-08 20:08:31.791543"]]
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "city", "state", "contact_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["street", "fsdf"], ["city", "fsdfsdf"], ["state", "fsdfsd"], ["contact_id", 13], ["created_at", "2017-10-08 20:08:31.794802"], ["updated_at", "2017-10-08 20:08:31.794802"]]
+  [1m[35m (110.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/contacts/13
+Completed 302 Found in 167ms (ActiveRecord: 116.0ms)
+
+
+Started GET "/contacts/13" for 127.0.0.1 at 2017-10-08 17:08:31 -0300
+Processing by ContactsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT  "contacts".* FROM "contacts" WHERE "contacts"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering contacts/show.html.erb within layouts/application
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 225ms (Views: 188.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/contacts" for 127.0.0.1 at 2017-10-08 17:08:37 -0300
+Processing by ContactsController#index as HTML
+  Rendering contacts/index.html.erb within layouts/application
+  [1m[36mContact Load (1.0ms)[0m  [1m[34mSELECT "contacts".* FROM "contacts"[0m
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mKind Load (1.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mKind Load (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "kinds".* FROM "kinds" WHERE "kinds"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered contacts/shared/_teste.html.erb (1.0ms)
+  Rendered contacts/index.html.erb within layouts/application (50.1ms)
+Completed 200 OK in 217ms (Views: 194.8ms | ActiveRecord: 2.0ms)
+
+

@@ -3,6 +3,9 @@ class ContactsController < ApplicationController
 
   # GET /contacts
   # GET /contacts.json
+  def options_for_select
+    @kind_options_for_select = Kind.all
+  end
   def index
     @contacts = Contact.all
   end
@@ -16,6 +19,8 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
     options_for_select
+    @contact.build_address
+
   end
 
   # GET /contacts/1/edit
@@ -33,6 +38,7 @@ class ContactsController < ApplicationController
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
       else
+        
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
@@ -71,10 +77,8 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:name, :email, :kind_id, :rmk)
+      params.require(:contact).permit(:name, :email, :kind_id, :rmk, address_attributes: [:street, :city, :state])
     end
 
-    def options_for_select
-      @kind_options_for_select = Kind.all
-    end
+
 end
